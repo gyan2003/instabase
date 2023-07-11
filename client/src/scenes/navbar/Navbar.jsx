@@ -98,7 +98,7 @@ const Navbar = () => {
           </IconButton>
          </Tooltip>
         
-         <FormControl variant='standard' value='sigma'>
+         {/* <FormControl variant='standard' value='sigma'>
           <Select
             value={fullName}
             sx={{
@@ -121,9 +121,12 @@ const Navbar = () => {
           </MenuItem>
           
           <MenuItem onClick={()=>dispatch(setLogout())}>Log Out</MenuItem>
-
+  
           </Select>
-         </FormControl>
+         </FormControl> */}
+         <IconButton onClick={()=>dispatch(setLogout())}>
+           <Logout/>
+         </IconButton>
         </FlexBetween>
       ):(
         <IconButton
