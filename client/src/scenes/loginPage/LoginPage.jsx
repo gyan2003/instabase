@@ -3,8 +3,10 @@ import { Box,div,useTheme,useMediaQuery,Typography,IconButton } from '@mui/mater
 import { DarkMode,LightMode, } from '@mui/icons-material';
 import FlexBetween from 'components/FlexBetween'
 import { useSelector,useDispatch } from 'react-redux';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import state, {setMode } from '../../state/index'
 import Form from './Form'
+import { pink } from '@mui/material/colors';
  
 
 const LoginPage = () => {
@@ -13,6 +15,7 @@ const LoginPage = () => {
   const dispatch=useDispatch();
   const neutralLight=theme.palette.neutral.light;
   const dark=theme.palette.neutral.dark;
+  
 
   return (
     <Box width="100%">
@@ -25,7 +28,9 @@ const LoginPage = () => {
         justifyContent="space-between"
       >
         <Typography fontWeight="600" fontSize="1.6rem" color={theme.palette.mode==='dark'?'white':'black'}>
-          InstaBase
+           <IconButton>
+             <InstagramIcon sx={{fontSize:"2.7rem",color:pink[500]}}/>
+           </IconButton>
         </Typography>
         <IconButton onClick={()=>dispatch(setMode())}>
            {theme.palette.mode==='dark'?(

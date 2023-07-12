@@ -6,7 +6,8 @@ AttachFileOutlined,
 GifBoxOutlined,
 ImageOutlined,
 MicOutlined,
-MoreHorizOutlined
+MoreHorizOutlined,
+Palette
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 
@@ -25,7 +26,8 @@ const MyPostWidget = ({picturePath}) => {
   const [image,setImage]=useState(null);
   const [post, setPost] = useState("");
   const { palette } = useTheme();
-  const { _id } = useSelector((state) => state.user);
+  const { _id,firstName} = useSelector((state) => state.user);
+
   const token = useSelector((state) => state.token);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const mediumMain = palette.neutral.mediumMain;
@@ -54,7 +56,7 @@ const MyPostWidget = ({picturePath}) => {
      <WidgetWrapper>
        <FlexBetween gap="1.5rem">
         <InputBase 
-          placeholder="What's on your mind..."
+          placeholder={`Hey ${firstName}..  What's your plan today`}
           onChange={(e) => setPost(e.target.value)}
           value={post}
           sx={{
@@ -88,7 +90,7 @@ const MyPostWidget = ({picturePath}) => {
                 >
                   <input {...getInputProps()} />
                   {!image ? (
-                    <p>Add Image Here</p>
+                    <p>Dropdown your image...</p>
                   ) : (
                     <FlexBetween>
                       <Typography>{image.name}</Typography>
@@ -119,7 +121,7 @@ const MyPostWidget = ({picturePath}) => {
             color={mediumMain}
             sx={{ "&:hover": { cursor: "pointer", color: medium } }}
           >
-            Image
+            Avatar
           </Typography>
         </FlexBetween>
 
@@ -132,6 +134,11 @@ const MyPostWidget = ({picturePath}) => {
             color: "white",
             backgroundColor: palette.primary.dark,
             borderRadius: "3rem",
+            "&:hover":{
+              backgroundColor:palette.primary.main,
+              color:"dark",
+              cursor:"pointer"
+            }
           }}
         >
           POST

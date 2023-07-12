@@ -1,5 +1,6 @@
 import {React,useState} from 'react'
 import Tooltip from '@mui/material/Tooltip';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import { Box,
   InputBase,
   IconButton,
@@ -26,6 +27,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import state, {setMode,setLogout} from '../../state/index'
 import { useNavigate } from 'react-router-dom';
 import FlexBetween from 'components/FlexBetween';
+import { pink } from '@mui/material/colors';
 
  
 
@@ -51,7 +53,7 @@ const Navbar = () => {
   return (
     <FlexBetween padding="0.8rem 6%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
-       <Typography
+      <Typography
         //  fontWeight="bold"
          fontWeight="500"
          fontSize="1.6rem"
@@ -64,7 +66,9 @@ const Navbar = () => {
           }
          }}
        >
-        InstaBase
+         <IconButton >
+           <InstagramIcon sx={{fontSize:"2rem",color:pink[500]}}/>
+         </IconButton>
        </Typography>
 
        {isNonMobileScreen&&(
@@ -73,8 +77,8 @@ const Navbar = () => {
          borderRadius="9px"
          gap="3rem"
          padding="0.1rem 1.5rem"
-         width="16rem"
-        
+         width="20rem"
+         ml="19rem"
         >
          <InputBase placeholder="Search..." />
             <IconButton>

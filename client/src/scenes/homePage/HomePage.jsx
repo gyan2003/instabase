@@ -29,6 +29,8 @@ const HomePage = () => {
           <MyPostWidget/>
           <PostsWidget userId={_id}/>
         </Box>
+        <Divider orientation='vertical' flexItem sx={{fontWeight:"bolder",color:"black"}}>
+        </Divider>
         <Box flexBasis={isNonMobileScreen?"26%":undefined}>
           <UserWidget userId={_id} picturePath={picturePath}/>
          

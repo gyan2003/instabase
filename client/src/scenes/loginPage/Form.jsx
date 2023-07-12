@@ -295,11 +295,12 @@ const Form = () => {
               type="submit"
               sx={{
                 m: "2rem 0",
-               
+                ml:"2.2rem",
                 p: "0.5rem",
+                width:"14vw",
                 backgroundColor: palette.primary.dark,
                 color: palette.background.alt,
-                "&:hover": { color:"black" ,border:"0.5px solid transparent" ,bgcolor:"aqua",zIndex:"99",cursor:"pointer"},
+                "&:hover": { color:"black" ,border:"0.5px solid transparent" ,bgcolor:palette.primary.main,zIndex:"99",cursor:"pointer"},
               }}
             >
               {isLogin ? "LOGIN" : "REGISTER"}
