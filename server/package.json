@@ -19,8 +19,10 @@
   "type":"module",
   "devDependencies": {},
   "scripts": {
+    "server":"nodemon index.js",
+    "start":"node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"npm i"
+    "build":"npm install && npm run build"
   },
   "keywords": [],
   "author": "",
