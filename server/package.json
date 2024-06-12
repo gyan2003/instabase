@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
@@ -16,12 +16,11 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "type":"module",
-  "devDependencies": {},
+  "type": "module",
   "scripts": {
-    "server":"nodemon index.js",
-    "start":"node index.js",
-    "build":"npm install"
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "build": "npm install"
   },
   "keywords": [],
   "author": "",
